@@ -6,8 +6,6 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import java.math.BigDecimal;
-
 @AllArgsConstructor
 @Builder
 @Getter
@@ -17,5 +15,5 @@ public class Discount {
     private String id;
     private String description;
     private Double percentage;
-    private BigDecimal staticAmount;
+    private Integer staticAmount;
 }

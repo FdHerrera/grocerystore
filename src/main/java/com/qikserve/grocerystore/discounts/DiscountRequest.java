@@ -6,8 +6,6 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import java.math.BigDecimal;
-
 @AllArgsConstructor
 @Builder
 @EqualsAndHashCode
@@ -16,5 +14,5 @@ import java.math.BigDecimal;
 public class DiscountRequest {
     private String description;
     private Double percentage;
-    private BigDecimal staticAmount;
+    private Integer staticAmount;
 }

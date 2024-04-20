@@ -6,15 +6,13 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import java.math.BigDecimal;
-
 @AllArgsConstructor
 @Builder
 @Getter
 @NoArgsConstructor
 public class Item {
     @NotNull
-    private BigDecimal price;
+    private Integer price;
     @NotNull
     private Integer quantity;
     private String description;

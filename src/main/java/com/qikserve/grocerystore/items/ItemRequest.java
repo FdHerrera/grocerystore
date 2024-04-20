@@ -6,15 +6,13 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import java.math.BigDecimal;
-
 @AllArgsConstructor
 @Builder
 @EqualsAndHashCode
 @Getter
 @NoArgsConstructor
 public class ItemRequest {
-    private BigDecimal price;
+    private Integer price;
     private Integer quantity;
     private String description;
     private String name;
