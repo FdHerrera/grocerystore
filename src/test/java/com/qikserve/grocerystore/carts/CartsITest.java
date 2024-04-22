@@ -1,5 +1,6 @@
 package com.qikserve.grocerystore.carts;
 
+import basetest.IntegrationTest;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.tomakehurst.wiremock.WireMockServer;
 import com.github.tomakehurst.wiremock.client.WireMock;
@@ -29,20 +30,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.header;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@AutoConfigureMockMvc
-@EnableWireMock({
-        @ConfigureWireMock(name = "carts-service", port = 8081)
-})
-@SpringBootTest
-class CartsITest {
-
-    private final ObjectMapper objectMapper = new ObjectMapper();
-
-    @InjectWireMock("carts-service")
-    private WireMockServer wireMock;
-
-    @Autowired
-    private MockMvc mockMvc;
+class CartsITest extends IntegrationTest {
 
     @Test
     void getCart() throws Exception {

@@ -1,21 +1,9 @@
 package com.qikserve.grocerystore.items;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.github.tomakehurst.wiremock.WireMockServer;
+import basetest.IntegrationTest;
 import com.github.tomakehurst.wiremock.client.WireMock;
-import com.maciejwalkowiak.wiremock.spring.ConfigureWireMock;
-import com.maciejwalkowiak.wiremock.spring.EnableWireMock;
-import com.maciejwalkowiak.wiremock.spring.InjectWireMock;
-import com.qikserve.grocerystore.items.Item;
-import com.qikserve.grocerystore.items.ItemRequest;
-import com.qikserve.grocerystore.items.Item;
-import com.qikserve.grocerystore.items.ItemRequest;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
-import org.springframework.test.web.servlet.MockMvc;
 
 import java.nio.charset.Charset;
 
@@ -29,20 +17,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.header;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@AutoConfigureMockMvc
-@EnableWireMock({
-        @ConfigureWireMock(name = "item-service", port = 8081)
-})
-@SpringBootTest
-class ItemsITest {
-
-    private final ObjectMapper objectMapper = new ObjectMapper();
-
-    @InjectWireMock("item-service")
-    private WireMockServer wireMock;
-
-    @Autowired
-    private MockMvc mockMvc;
+class ItemsITest extends IntegrationTest {
 
     @Test
     void getItem() throws Exception {
