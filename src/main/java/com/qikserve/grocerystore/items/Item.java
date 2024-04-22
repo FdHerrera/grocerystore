@@ -13,8 +13,6 @@ import lombok.NoArgsConstructor;
 public class Item {
     @NotNull
     private Integer price;
-    @NotNull
-    private Integer quantity;
     private String description;
     @NotNull
     private String id;
